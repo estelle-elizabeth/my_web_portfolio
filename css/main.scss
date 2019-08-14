@@ -125,7 +125,6 @@ body{
 }
 
 .active{
-	// color: black;
 	background-color: getColor(footerFont);
 }
 
@@ -135,11 +134,9 @@ body{
 	font-weight: bold;
 	cursor: pointer;
 	display: none;
-	/*justify-content: center;*/
 	text-align: left;
 	align-items: center;
 	margin-left: 15px;
-	/*font-size: 32px;*/
 }
 
 .cross{
@@ -171,7 +168,6 @@ body{
 }
 
 .menuItem{
-	/*text-align: center;*/
 	height: 100%;
 	display: flex;
 	justify-content: center;
@@ -238,14 +234,12 @@ body{
 }
 
 .top{
-	/*background-color: #f5f5dc;*/
 	color: getColor(primary1);
 	font-family: 'Roboto Slab', serif;
 	background: 
       linear-gradient(rgba(0, 0, 0, 0.5), 
       rgba(0, 0, 0, 0.5)
     ),
-    /* bottom, image */
     url('../images/portfolio8.jpg') no-repeat fixed center;
 }
 
@@ -255,7 +249,6 @@ body{
 	height: 4px;
 	background-color: getColor(basicBlack);
 	margin: 5px;
-	/*float: right;*/
 }
 
 .home{
@@ -267,7 +260,6 @@ body{
 }
 
 .name1{
-	/*font-size: 5vw;*/
     font-weight: bold;
     @include forSize(phone){
         font-size: 5vw;
