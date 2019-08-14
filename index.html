@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Estelle's Portfolio</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+	<div class = "container top">
+		<div id="Menu" class="menu">
+			<div class="hamburger">&#9776;</div>
+			<div class="cross">&#735;</div>
+			<div id = "menuBox" class="menuMiniBox">
+				<a class = "menuItem active" href="#Home"> Home</a>
+				<a class = "menuItem" href="#About">About</a>
+				<a class = "menuItem" href="#Skills">Skills</a>
+				<a class = "menuItem" href="#Projects">Projects</a>
+			</div>
+			
+
+		</div>
+		<div id="Home" class = "home">
+			<!-- <div class="subHome"> -->
+				<div class="name1">ESTELLE OCRAN</div>
+				<div class = "line1"></div>
+				<div class="shortDesc">COMPUTER SCIENCE STUDENT & MORE</div>
+				<a href = "cv.pdf" target="_blank" class = "resume">Download CV</a>
+			<!-- </div> -->
+		</div>
+	</div>
+
+	<div id = "About" class = "box about">
+		<div class="miniContainer">
+			<div class="me">
+				<div class="meText">HI THERE!</div>
+				<div class="line2"></div>
+			</div>
+			<div class="shot">
+				<img src="images/shot.jpg" class="selfPortrait">
+				<div class="intro">
+				Welcome to my portfolio! I'm a rising junior from Ghana majoring in Computer Science with minors in Interactive Media and Music at New York University Abu Dhabi. I got introduced to coding in the spring semester of my freshman year and knew right then that I would love to do this for a lifetime thus my decision to major in Computer Science. <br><br> I love building software, websites and even games! My favorite thing about Computer Science is that feeling of excitement and achievement after solving a challenge. I love learning new things which means you'll often see me engaging in some new activity.<br><br> But well, coding isn't all I do. I am passionate about music and recently started playing the piano and guitar as well as DJing! I also have an expertise in sound and light engineering and have facilitated a number of events on my campus. 
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+	<div id = "Skills" class="box skills">
+		<div class="miniContainer">
+			<div class="me">
+				<div class="meText SKILLS">SKILLS</div>
+				<div class="line2"></div>
+			</div>
+
+			<div class="skillsList">
+				<div class="row">Programming<br>Languages</div>
+				<div class="row">Cyber<br>Security</div>
+				<div class="row">Adobe<br>Suite</div>
+				<div class="row">Interactive<br>Media</div>
+				<div class="row">Sound & Light<br>Engineering</div>
+				<div class="row music">Music</div>
+			</div>
+
+			<div class="me">
+				<div class="meText TECH">TECHNICAL SKILLS</div>
+				<div class="line2"></div>
+			</div>
+
+			<div class="skillsList techList">
+				<img src="images/python.png" class="prog">
+				<img src="images/java.png" class="prog">
+				<img src="images/c.png" class="prog">
+				<img src="images/c++.png" class="prog">
+				<img src="images/js.png" class="prog">
+				<img src="images/sql.png" class="prog">
+				<img src="images/g.png" class="prog">
+				<img src="images/html.png" class="prog">
+			</div>
+
+		</div>
+		
+	</div>
+
+	<div id = "Projects" class="box projects">
+		<div class="miniContainer">
+			<div class="me">
+				<div class="meText SKILLS">SELECTED PROJECTS</div>
+				<div class="line2"></div>
+			</div>
+
+			<div class="skillsList projectList">
+				<div class="projectBox">
+					
+					<img src = "images/game.png" class="projPhoto myImg">
+					<div class="projDesc">A multiplayer maze game where only a certain radius of the maze is visible to the player with the remaining parts of the maze being dark. The game was created with Pygame.Click <a href="" target="_blank">here</a> to see the source code.</div>
+				</div>
+
+				<div id = "mypopUp" class="popUp">
+					<span class="close">&times;</span>
+					<img class="popUpContent" id="img01">
+					<iframe class = "video" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+				</div>
+
+				<div class="projectBox">
+					<img src = "images/music.png" class="projPhoto myVideo">
+					<div class="projDesc">A music box with blinking LED lights created with the Arduino software during my Introduction to Interactive Media class. The music is triggered by the detection of a certain amount of light by the photoresistor. Click <a href="" target="_blank">here</a> to see the source code.</div>
+				</div>
+
+				<div class="projectBox">
+					<img src = "images/film.png" class="projPhoto myImg">
+					<div class="projDesc">Created multiple projects based on web development, sound, 2D design and video effects for my Communications Lab class. Click <a href="" target="_blank">here</a> to view the projects hosted on a web portfolio.
+					</div>
+				</div>
+
+				<div class="projectBox">
+					<img src = "images/haneen.png" class="projPhoto myImg">
+					<div class="projDesc">A mobile keyboard solution that converts Arabizi/English to pure Arabic script. The solution won second place at the NYUAD Hackathon for Social Good in the Arab World 2019. Click <a href="" target="_blank">here</a> to see the source code.
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<span class="copyHolder">
+			<span class="copy">&copy;</span>
+			<span class="endName">2019 Estelle Ocran</span>
+		</span>
+		<div class="contact">
+			<a class="contactDetails" href="https://www.linkedin.com/in/estelle-ocran-685587178/" target="_blank">LinkedIn</a>
+			<span class="slash">//</span>
+			<a class="contactDetails" href="https://github.com/estelle-elizabeth" target="_blank">github</a>
+		</div>
+	</div>
+
+	<script src="https://player.vimeo.com/api/player.js"></script>
+   	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<script src="js/script.js" type="text/javascript"></script>
+</body>
+</html>

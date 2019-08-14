@@ -1,0 +1,533 @@
+$colors: (
+    primary1: white,
+    primary2: #eeeeee,
+    basicFont: #666666,
+    basicBlack: black,
+    line: #a7adba,
+    skills: #974dea,
+    technicalSkills: #f79e02,
+    footerFont: #dddddd,
+    footerSlash: #999999,
+    footerBackground: #333333
+);
+
+@function getColor($colorName){
+    @return map-get($colors, $colorName)
+}
+
+@mixin forSize($size){
+    @if $size == tablet {
+        @media (min-width: 650px){
+            @content;
+        } 
+    }
+
+    @else if $size == tabMax{
+        @media(max-width: 649px){
+            @content;
+        }
+    }
+
+    @else if $size == phone{
+        @media(max-width: 599px){
+            @content;
+        }
+    }
+
+    @else if $size == tabPrecise{
+        @media(max-width: 899px) and (min-width: 600px){
+            @content;
+        }
+    }
+
+    @else if $size == desktop{
+        @media(min-width: 900px){
+            @content;
+        }
+    }
+
+    @else if $size == tabLarger{
+        @media (max-width: 899px){
+            @content;
+        }
+    }
+
+    @else if $size == desktopRegular{
+        @media (max-width: 1029px){
+            @content;
+        }
+    }
+
+    @else if $size == desktopLarger{
+        @media (min-width: 1030px){
+            @content;
+        }
+    }
+
+    @else if $size == tab2{
+        @media only screen and (max-width: 700px){
+            @content;
+        }
+    }
+
+    @else if $size == phone2{
+        @media (max-width: 320px){
+            @content;
+        }
+    }
+}
+
+@mixin keyframe($animationName) {
+    @keyframes #{$animationName}{
+        @content;
+    } 
+}
+
+
+@include keyframe(zoom){
+	from {transform: scale(0);}
+	to {transform: scale(1);}
+}
+
+@mixin animation($str) {
+    -webkit-animation: #{$str};
+}
+
+
+
+
+*{
+	box-sizing: border-box;
+}
+
+
+
+html{
+	height: 100%;
+	scroll-behavior: smooth;
+}
+
+body{
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+	height: 100%;
+}
+
+.menu{
+	background-color: getColor(primary1);
+	height: 10%;
+	width: 100%;
+	text-align: center;
+	position: fixed;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	display: flex;
+	z-index: 2;
+}
+
+.active{
+	// color: black;
+	background-color: getColor(footerFont);
+}
+
+
+
+.cross, .hamburger{
+	font-weight: bold;
+	cursor: pointer;
+	display: none;
+	/*justify-content: center;*/
+	text-align: left;
+	align-items: center;
+	margin-left: 15px;
+	/*font-size: 32px;*/
+}
+
+.cross{
+	font-size: 50px;
+}
+
+.hamburger{
+    font-size: 32px;
+    
+    @include forSize(tabMax){
+        display: flex;
+    }
+}
+
+
+.menuMiniBox{
+	height: 100%;
+    display: flex;
+    
+    @include forSize(tablet){
+        flex-direction: row;
+		margin-left: 5%;
+    }
+
+    @include forSize(tabMax){
+		display: none;
+
+    }
+}
+
+.menuItem{
+	/*text-align: center;*/
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+    color: getColor(basicFont);
+    
+    @include forSize(tablet){
+        margin-left: 5%;
+		margin-right: 5%;
+		padding: 10px;
+    }
+}
+
+.menuItem:hover{
+	color: getColor(basicBlack);
+	background-color: getColor(footerFont);
+}
+
+
+.visible{
+    @include forSize(tabMax){
+		display: flex;
+
+    }
+}
+
+.invisible{
+    @include forSize(tabMax){
+		display: none;
+
+    }
+}
+
+.mobile{
+    @include forSize(tabMax){
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        transition: 2s ease-out;
+    }
+}
+
+.mobile2{
+    @include forSize(tabMax){
+        width: 100%;
+        padding: 25px;
+        background-color: getColor(primary1);
+    }
+}
+
+.mobile1{
+    @include forSize(tabMax){
+        flex-direction: column;
+    }
+}
+
+
+.container{
+	margin: 0;
+	width: 100%;
+	height: 100vh;
+	opacity: 1;
+}
+
+.top{
+	/*background-color: #f5f5dc;*/
+	color: getColor(primary1);
+	font-family: 'Roboto Slab', serif;
+	background: 
+      linear-gradient(rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),
+    /* bottom, image */
+    url('../images/portfolio8.jpg') no-repeat fixed center;
+}
+
+
+.line{
+	width: 30px;
+	height: 4px;
+	background-color: getColor(basicBlack);
+	margin: 5px;
+	/*float: right;*/
+}
+
+.home{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 90%;
+	flex-direction: column;
+}
+
+.name1{
+	/*font-size: 5vw;*/
+    font-weight: bold;
+    @include forSize(phone){
+        font-size: 5vw;
+    }
+
+    @include forSize(tabPrecise){
+        font-size: 2em;
+    }
+
+    @include forSize(desktop){
+        font-size: 5vw;
+    }
+}
+
+.shortDesc{
+    @include forSize(phone){
+        font-size: 4vw;
+    }
+
+    @include forSize(tabPrecise){
+        font-size: 1em;
+    }
+
+    @include forSize(desktop){
+        font-size: 1.8vw;
+    }
+}
+
+
+.line1{
+	width: 35vw;
+	height: 4px;
+	background-color: getColor(primary1);
+	margin: 5px;
+}
+
+.resume{
+	width: 12%;
+	min-width: 100px;
+	text-align: center;
+	font-size: 14px;
+	padding: 15px;
+	border: 2px solid getColor(primary1);
+	margin-top: 5vh;
+	-webkit-transition: background-color 1s ease-out;
+  	-moz-transition: background-color 1s ease-out;
+  	-o-transition: background-color 1s ease-out;
+  	transition: background-color 1s ease-out;
+  	text-decoration: none;
+	color: getColor(primary1);
+}
+
+.resume:hover{
+	background-color: #ded6d8;
+	cursor: pointer;
+	color: getColor(basicBlack);
+}
+
+.box{
+	display: flex;
+	justify-content: center;
+}
+
+.about{
+	margin-bottom: 30px;
+	padding-bottom: 40px;
+}
+
+.miniContainer{
+	width: 65%;
+	min-width: 250px;
+}
+
+.selfPortrait{
+    border: 2px solid getColor(primary2);
+    
+    @include forSize(desktop){
+        width: 30%;
+	    float: left;
+    }
+
+    @include forSize(tabLarger){
+        width: 70%;
+	    display: table;
+	    margin: 0 auto;
+    }
+}
+
+.me{
+	margin-top: 3%;
+}
+
+.meText{
+	color: #3498db;
+	font-size: 180%;	
+}
+
+.line2{
+	width: 80px;
+	height: 4px;
+	background-color: getColor(line);
+	margin-top: 5px;
+	margin-bottom: 3em;
+	display: inline-block;
+}
+
+.intro{
+    color: #313131;
+    
+    @include forSize(desktop){
+        width: 70%;
+	    float: left;
+	    padding-left: 37px;
+    }
+}
+
+
+.skills{
+	background-color: getColor(primary2);
+}
+
+.skillsList{
+	width: 100%;
+	margin-bottom: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.row{
+	background-color: getColor(skills);
+	padding: 10px;
+	color: getColor(primary1);
+	margin: 0px 20px 20px;
+	text-align: center;
+	font-size: 130%;
+	width: 235px;
+
+}
+
+.music{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.SKILLS{
+	color: getColor(skills);
+}
+
+.TECH{
+	color: getColor(technicalSkills);
+}
+
+.prog{
+	width: 130px;
+	margin: 0px 40px 50px;
+}
+
+.projectBox{
+	margin: 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    @include forSize(desktopRegular){
+        width: 90%;
+    }
+
+    @include forSize(desktopLarger){
+        width: 44%;
+    }
+}
+
+.projPhoto{
+	width: 100%;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.projPhoto:hover{
+	opacity: 0.7;
+}
+
+.projDesc{
+	padding: 20px;
+	font-size: 0.9em;
+	color: #313131;
+}
+
+.popUp{
+	display: none;
+	position: fixed;
+	z-index: 3;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+.popUpContent{
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+    @include animation('zoom 0.6s');
+
+    @include forSize(tab2){
+        width: 100%;
+    }
+}
+
+.close{
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+
+.close:hover,.close:focus{
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.video{
+	width: 100%;
+	height: 100%;
+}
+
+.footer{
+	width: 100%;
+	background-color: getColor(footerBackground);
+	color: getColor(footerFont);
+	font-size: 80%;
+	padding: 20px;
+}
+
+.copyHolder{
+	margin-left: 10%;
+}
+
+.slash{
+	color: getColor(footerSlash);
+}
+
+.contact{
+	float: right;
+	margin-right: 5%;
+    text-decoration: none;
+    
+    @include forSize(phone2){
+        margin-left: 12%;
+    }
+}
+
+.contactDetails{
+	color: getColor(footerFont);
+}
